@@ -30,6 +30,13 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 // routes
+app.get("/", (req, res) =>
+  res.status(200).json({
+    success: true,
+    message: "welcome to tshirt-store backend",
+  })
+);
+
 app.use("/api", authRoutes);
 app.use("/api", userRoutes);
 app.use("/api", categoryRoutes);
